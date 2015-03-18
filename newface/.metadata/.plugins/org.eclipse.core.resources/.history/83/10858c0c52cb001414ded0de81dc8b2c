@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="7"
+    android:background="#00ff00"
+    android:orientation="vertical" >
+    	<TextView 
+        android:id="@+id/newfacedialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NewFace"
+        android:textSize="20dp"
+        />
+	</LinearLayout>
+
+    <TableLayout
+    android:id="@+id/table"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="bottom|center"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:stretchColumns="*" >
+    	
+        <TableRow 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_weight="1"
+        android:gravity="center">
+            <Button 
+                android:id="@+id/photo1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/photo1"
+                />
+            
+            <Button 
+                android:id="@+id/photo2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/photo2"
+                />
+        </TableRow>
+        
+        <TableRow 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_weight="1"
+        android:gravity="center">
+            <Button 
+                android:id="@+id/photo3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/photo3"
+                />
+        </TableRow>
+    </TableLayout>
+    
+
+</LinearLayout>

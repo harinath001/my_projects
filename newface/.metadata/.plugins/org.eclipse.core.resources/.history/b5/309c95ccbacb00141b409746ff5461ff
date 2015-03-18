@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8"
+    android:orientation="vertical" >
+   
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="6"
+    android:background="#00ff00"
+    android:orientation="vertical" >
+    	<TextView 
+        android:id="@+id/newfacedialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NewFace"
+        android:textSize="20dp"
+        />
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <Button 
+                android:id="@+id/queue1button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Queue1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <Button 
+                android:id="@+id/queue2button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Queue2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        ></LinearLayout>
+
+</LinearLayout>

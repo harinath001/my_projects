@@ -1,0 +1,88 @@
+package com.example.myapp;
+
+//import com.example.myapp.MainActivity.RegisterUser;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
+
+public class ChatActivity extends ActionBarActivity  {
+	int i=0;
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.start);
+    	final EditText et = (EditText)findViewById(R.id.chatbox);
+        final ScrollView sv = (ScrollView)findViewById(R.id.scrollview);
+        final LinearLayout ll = (LinearLayout)findViewById(R.id.mainll);
+        final Context mcontext = this;
+  
+        et.setOnEditorActionListener(new OnEditorActionListener(){
+            public boolean onEditorAction(    TextView v,    int actionId,    KeyEvent event){
+            	String s = et.getText().toString();
+            	
+             //((ListView) findViewById(R.id.scrollview)).fullScroll(View.FOCUS_DOWN);
+            	
+                            
+            	if(s.isEmpty()){
+            		return false;
+            	}
+            	RelativeLayout rl = new RelativeLayout(mcontext);
+            	TextView tv = new TextView(mcontext);
+				LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
+            	rl.setLayoutParams(lp);
+            	//rl.setPadding(3, 1, 3, 1);
+            	
+            	DisplayMetrics dm = new DisplayMetrics();
+            	
+            	Display display = getWindowManager().getDefaultDisplay();
+            	Point size = new Point();
+            	display.getSize(size);
+            	int width = size.x;
+            	int height = size.y;
+            	
+            	LayoutParams lp2 = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+            	tv.setLayoutParams(lp2);
+            	tv.setTextColor(Color.WHITE);
+            	tv.setBackgroundResource(R.drawable.rounded_blue);
+            	tv.setText(s);
+            	tv.setMaxWidth(width/3);
+            	if(i%2==0){
+            		rl.setGravity(Gravity.LEFT);
+            		rl.addView(tv);
+            		ll.addView(rl);
+            		
+            	}
+            	else{
+            		rl.setGravity(Gravity.RIGHT);
+            		rl.addView(tv);
+            		ll.addView(rl);
+            	}
+            	et.setText("");
+            	et.requestFocus();
+            	
+            	i++;
+                return false;
+              }
+        });
+
+       
+    }
+
+}
